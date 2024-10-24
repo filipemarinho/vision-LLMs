@@ -1,2 +1,2 @@
 # vision-LLMs
-Exploring the uso of V-LLMs
+Exploring the use of V-LLMs
