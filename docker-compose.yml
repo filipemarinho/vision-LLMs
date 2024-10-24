@@ -3,4 +3,6 @@ services:
     build: .
     volumes:
       - ./data/:/data/
-
+    environment:
+        - PYTHONUNBUFFERED=no_buffer
+        - PYTHONDONTWRITEBYTECODE=1
