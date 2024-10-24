@@ -6,3 +6,18 @@ services:
     environment:
         - PYTHONUNBUFFERED=no_buffer
         - PYTHONDONTWRITEBYTECODE=1
+        - NVIDIA_VISIBLE_DEVICES=all
+        - NVIDIA_DRIVER_CAPABILITIES=all
+    runtime: nvidia
+    privileged: false
+    shm_size: '8gb'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [ gpu ]
+    ipc: host
+    ulimits:
+      stack: 67108864
+      memlock: -1
