@@ -23,8 +23,8 @@ class ImageInferencePipeline:
         self.encoder_path = encoder_path or self.DEFAULT_ENCODER_PATH
         self.predictor = self._initialize_predictor()
     def _initialize_predictor(self) -> TreePredictor:        
-        assert os.path.isfile(self.encoder_path), f"Encoder {self.encoder_path} does not exist" #TODO: treat exceptions: if and raise file not found
-
+        if not os.path.isfile(self.encoder_path):
+            raise FileNotFoundError(f"Encoder file does not exist: {self.encoder_path}")
         predictor = TreePredictor(
             owl_predictor=OwlPredictor(
                 self.model,
