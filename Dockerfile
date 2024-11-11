@@ -15,4 +15,4 @@ RUN pip install -r requirements.txt
 
 COPY ./src /code
 WORKDIR /code
-CMD [ "python", "image-inference.py" ]
+CMD [ "python", "image_inference.py" ]
