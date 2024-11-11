@@ -1,3 +1,6 @@
 numpy
 matplotlip
 fastapi
+uvicorn
+pydantic
+python-multipart #fix: RuntimeError: Form data requires 

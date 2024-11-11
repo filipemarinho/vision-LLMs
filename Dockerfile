@@ -15,4 +15,4 @@ RUN pip install -r requirements.txt
 
 COPY ./src /code
 WORKDIR /code
-CMD [ "python", "image_inference.py" ]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -22,3 +22,5 @@ services:
     ulimits:
       stack: 67108864
       memlock: -1
+    ports:
+      - "8000:8000"
